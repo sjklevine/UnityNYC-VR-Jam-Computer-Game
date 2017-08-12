@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 64980437172226132}
   - component: {fileID: 23043019489478180}
   - component: {fileID: 114355852825352562}
-  m_Layer: 17
+  m_Layer: 18
   m_Name: Webcam Display
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 33187944735275760}
   - component: {fileID: 64518633215342468}
   - component: {fileID: 23985510636969474}
-  m_Layer: 17
+  m_Layer: 18
   m_Name: Game Webcam Overlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ Camera:
   m_Depth: 50
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294836223
+    m_Bits: 4294705151
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 78ffdb645d6a5cc43931b61c139def0d, type: 2}
   m_TargetDisplay: 0
