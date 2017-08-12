@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class GridSnapManager : MonoBehaviour
 {
-    private float m_gridUnitSize = 1f;
+    private const float m_gridUnitSize = 0.02f;
 
-    public Vector2 GetSnapPos(float currentX, float currentY)
+    public Vector3 GetSnapPos(Vector3 currentPos)
     {
-        Vector2 snapPos = new Vector2();
-        snapPos.x = Mathf.Round(currentX / m_gridUnitSize) * m_gridUnitSize;
-        snapPos.y = Mathf.Round(currentY / m_gridUnitSize) * m_gridUnitSize;
+        Vector3 snapPos = new Vector3();
+        snapPos.x = Mathf.Round(currentPos.x / m_gridUnitSize) * m_gridUnitSize;
+        snapPos.y = Mathf.Round(currentPos.y / m_gridUnitSize) * m_gridUnitSize;
+        snapPos.z = Mathf.Round(currentPos.z / m_gridUnitSize) * m_gridUnitSize;
         return snapPos;
     }
 }

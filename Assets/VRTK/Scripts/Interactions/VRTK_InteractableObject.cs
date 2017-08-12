@@ -203,7 +203,7 @@ namespace VRTK
         protected VRTK_SnapDropZone storedSnapDropZone;
         protected Vector3 previousLocalScale = Vector3.zero;
         protected List<GameObject> currentIgnoredColliders = new List<GameObject>();
-        protected bool startDisabled = false;
+        protected bool startDisabled = false;   
 
         public virtual void OnInteractableObjectTouched(InteractableObjectEventArgs e)
         {
