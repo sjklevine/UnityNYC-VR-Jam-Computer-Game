@@ -8,6 +8,7 @@ public class SidescrollerEndingScript : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		if (other.tag.Equals("Player")) {
 			endgameText.BeginToggling ();
+            endgameText.GetComponent<AudioSource>().Play();
 		}
 	}
 }
