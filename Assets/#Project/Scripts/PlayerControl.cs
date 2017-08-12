@@ -47,7 +47,7 @@ public class PlayerControl : MonoBehaviour
 		// If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
 		if(h * GetComponent<Rigidbody>().velocity.x < maxSpeed)
 			// ... add a force to the player.
-			GetComponent<Rigidbody>().AddForce(Vector2.right * h * moveForce);
+			GetComponent<Rigidbody>().AddForce(Vector2.left * h * moveForce);
 
 		// If the player's horizontal velocity is greater than the maxSpeed...
 		if(Mathf.Abs(GetComponent<Rigidbody>().velocity.x) > maxSpeed)
