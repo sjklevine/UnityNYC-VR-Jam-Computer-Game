@@ -15,6 +15,7 @@ public class PlayerControl : MonoBehaviour
 	public float jumpForce = 1000f;			// Amount of force added when the player jumps.
 	private bool grounded = false;			// Whether or not the player is grounded.
 	private Animator anim;					// Reference to the player's animator component.
+	private Vector3 lastGroundedPosition;
 
 
 	void Awake()
@@ -27,11 +28,16 @@ public class PlayerControl : MonoBehaviour
 	void Update()
 	{
 		// The player is grounded if a linecast to the groundcheck position hits anything on the ground layer.
-		grounded = Physics.Raycast(new Ray(transform.position, Vector3.down), 100, 1 << LayerMask.NameToLayer("Ground"));  
+		RaycastHit hitInfo;
+		grounded = Physics.Raycast(new Ray(transform.position, Vector3.down), out hitInfo, 1f, 1 << LayerMask.NameToLayer("Ground"));  
 
 		// If the jump button is pressed and the player is grounded then the player should jump.
-		if(Input.GetButtonDown("Jump") && grounded)
+		if (Input.GetButtonDown ("Jump") && grounded) {
 			jump = true;
+		}
+		if (grounded) {
+			lastGroundedPosition = transform.position;
+		}
 	}
 
 
@@ -94,5 +100,10 @@ public class PlayerControl : MonoBehaviour
 		theScale.x *= -1;
 		transform.localScale = theScale;
 		*/
+	}
+
+	public void TeleportToLastSafePosition() {
+		this.transform.position = this.lastGroundedPosition + Vector3.up * 1.0f;
+		GetComponent<Rigidbody> ().velocity = Vector3.zero;
 	}
 }

@@ -751,7 +751,7 @@ Transform:
   - {fileID: 4000011921798948}
   - {fileID: 4000010318492766}
   m_Father: {fileID: 4000011368645488}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4000010242415096
 Transform:
@@ -832,9 +832,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4000013858448892}
-  - {fileID: 4000012256370280}
   - {fileID: 4000010114616428}
+  - {fileID: 4000012256370280}
+  - {fileID: 4000013858448892}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1031,7 +1031,7 @@ Transform:
   m_Children:
   - {fileID: 4544606604026690}
   m_Father: {fileID: 4000011368645488}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4026609101442608
 Transform:
@@ -1902,7 +1902,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   origin: {fileID: 0}
-  isValid: 0
 --- !u!114 &114000011497762404
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1942,7 +1941,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: -1
   origin: {fileID: 0}
-  isValid: 0
 --- !u!114 &114000012377227750
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1956,7 +1954,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: -1
   origin: {fileID: 0}
-  isValid: 0
 --- !u!114 &114000012492157348
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2042,11 +2039,18 @@ MonoBehaviour:
   enableAdaptiveResolution: 0
   minRenderScale: 0.7
   maxRenderScale: 1
+  enableMixedReality: 0
+  useDirectComposition: 0
+  greenScreenColorToleranceA: 20
+  greenScreenColorToleranceB: 15
+  greenScreenColorAlphaCutoff: 0.01
+  greenScreenColorShadows: 0.02
   _trackingOriginType: 1
   usePositionTracking: 1
   useRotationTracking: 1
   useIPDInPositionTracking: 1
   resetTrackerOnLoad: 0
+  multipleMainCameraWarningPresented: 0
 --- !u!114 &114000013937090930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2196,6 +2200,8 @@ MonoBehaviour:
       PublicKeyToken=null
   LeftHandCustomPose: {fileID: 0}
   RightHandCustomPose: {fileID: 0}
+  PacketSettings:
+    UpdateRate: 0.033333335
 --- !u!114 &114177628815396416
 MonoBehaviour:
   m_ObjectHideFlags: 1
