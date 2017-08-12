@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.58823526, g: 0.58823526, b: 0.58823526, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 0.3
+  m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.52
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.09373109, g: 0.117351905, b: 0.15959045, a: 0.52}
+  m_IndirectSpecularColor: {r: 0.30926558, g: 0.34533253, b: 0.377628, a: 0.52}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -166,9 +166,9 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 4
-  m_Range: 2.7111034
-  m_SpotAngle: 74.49492
+  m_Intensity: 25
+  m_Range: 2.9318461
+  m_SpotAngle: 87.12203
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -199,7 +199,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 5701387}
   m_LocalRotation: {x: 0.8660254, y: -0, z: -0, w: 0.50000006}
-  m_LocalPosition: {x: 0, y: 1.65, z: 1.671}
+  m_LocalPosition: {x: 0, y: 1.624, z: 1.294}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 724371758}
@@ -7182,6 +7182,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endgameText: {fileID: 274990901}
+  m_fireWorksPrefab: {fileID: 0}
+  m_xOffset: 1
+  m_yOffset: 1
+  Soundtrack: {fileID: 0}
 --- !u!23 &1923829902
 MeshRenderer:
   m_ObjectHideFlags: 0
