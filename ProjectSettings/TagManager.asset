@@ -5,7 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bullet
-  - projectile
   - FxTemporaire
   - Floor
   - ExcludeTeleport
@@ -18,15 +17,15 @@ TagManager:
   - UI
   - 
   - 
-  - GazeOnly
-  - MazeWalls
-  - MazeTurret
-  - MazeTurretBullet
-  - Bg
-  - FPSWeapon
+  - Ground
+  - 
+  - 
+  - 
+  - 
+  - 
   - StereoRender_Ignore
-  - Kitten
-  - DestinationPoints
+  - 
+  - 
   - PCOnly
   - 
   - 
