@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4719934958636230}
   - component: {fileID: 33235268703251600}
   - component: {fileID: 23719321273823976}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: DOWN_HelperArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4880761500635398}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: HelperArrows
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 4264059750806390}
   - component: {fileID: 33041371294048492}
   - component: {fileID: 23868878731028674}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: UP_HelperArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,8 +135,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1916935924539834}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.3, y: 4.59, z: -11.799999}
-  m_LocalScale: {x: 13.333332, y: 13.333332, z: 13.333332}
+  m_LocalPosition: {x: -29, y: 7.7, z: 0}
+  m_LocalScale: {x: 20, y: 15, z: 20}
   m_Children:
   - {fileID: 4880761500635398}
   - {fileID: 4534567231453342}

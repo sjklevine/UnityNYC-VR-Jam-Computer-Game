@@ -620,11 +620,66 @@ Prefab:
     - target: {fileID: 114558646393452298, guid: 44bbc43cb22aaac419fe9c2da105f767,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114558646393452298, guid: 44bbc43cb22aaac419fe9c2da105f767,
         type: 2}
       propertyPath: m_isInputParsingRequired
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114942701300406782, guid: 44bbc43cb22aaac419fe9c2da105f767,
+        type: 2}
+      propertyPath: isUsable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114942701300406782, guid: 44bbc43cb22aaac419fe9c2da105f767,
+        type: 2}
+      propertyPath: holdButtonToUse
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114090200586017020, guid: 44bbc43cb22aaac419fe9c2da105f767,
+        type: 2}
+      propertyPath: precisionGrab
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114136376847388482, guid: 44bbc43cb22aaac419fe9c2da105f767,
+        type: 2}
+      propertyPath: disableWhenIdle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114942701300406782, guid: 44bbc43cb22aaac419fe9c2da105f767,
+        type: 2}
+      propertyPath: disableWhenIdle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114277925975530054, guid: 44bbc43cb22aaac419fe9c2da105f767,
+        type: 2}
+      propertyPath: disableWhenIdle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114063955613503784, guid: 44bbc43cb22aaac419fe9c2da105f767,
+        type: 2}
+      propertyPath: disableWhenIdle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114954407027768638, guid: 44bbc43cb22aaac419fe9c2da105f767,
+        type: 2}
+      propertyPath: disableWhenIdle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114343943432189920, guid: 44bbc43cb22aaac419fe9c2da105f767,
+        type: 2}
+      propertyPath: disableWhenIdle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114408224319777636, guid: 44bbc43cb22aaac419fe9c2da105f767,
+        type: 2}
+      propertyPath: disableWhenIdle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114509299443787312, guid: 44bbc43cb22aaac419fe9c2da105f767,
+        type: 2}
+      propertyPath: disableWhenIdle
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1889,9 +1944,109 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114000012492157348, guid: 41c0760bd81dd084283814f0c432b466,
+        type: 2}
+      propertyPath: actualBoundaries
+      value: 
+      objectReference: {fileID: 1316356817}
+    - target: {fileID: 114000012492157348, guid: 41c0760bd81dd084283814f0c432b466,
+        type: 2}
+      propertyPath: actualHeadset
+      value: 
+      objectReference: {fileID: 1316356812}
+    - target: {fileID: 114000012492157348, guid: 41c0760bd81dd084283814f0c432b466,
+        type: 2}
+      propertyPath: actualLeftController
+      value: 
+      objectReference: {fileID: 1316356816}
+    - target: {fileID: 114000012492157348, guid: 41c0760bd81dd084283814f0c432b466,
+        type: 2}
+      propertyPath: actualRightController
+      value: 
+      objectReference: {fileID: 1316356814}
+    - target: {fileID: 114000012492157348, guid: 41c0760bd81dd084283814f0c432b466,
+        type: 2}
+      propertyPath: modelAliasLeftController
+      value: 
+      objectReference: {fileID: 1316356815}
+    - target: {fileID: 114000012492157348, guid: 41c0760bd81dd084283814f0c432b466,
+        type: 2}
+      propertyPath: modelAliasRightController
+      value: 
+      objectReference: {fileID: 1316356813}
+    - target: {fileID: 114000010315091656, guid: 41c0760bd81dd084283814f0c432b466,
+        type: 2}
+      propertyPath: actualBoundaries
+      value: 
+      objectReference: {fileID: 1316356818}
+    - target: {fileID: 114000010315091656, guid: 41c0760bd81dd084283814f0c432b466,
+        type: 2}
+      propertyPath: actualHeadset
+      value: 
+      objectReference: {fileID: 1316356821}
+    - target: {fileID: 114000010315091656, guid: 41c0760bd81dd084283814f0c432b466,
+        type: 2}
+      propertyPath: actualLeftController
+      value: 
+      objectReference: {fileID: 1316356820}
+    - target: {fileID: 114000010315091656, guid: 41c0760bd81dd084283814f0c432b466,
+        type: 2}
+      propertyPath: actualRightController
+      value: 
+      objectReference: {fileID: 1316356819}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 41c0760bd81dd084283814f0c432b466, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1316356812 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000014132296520, guid: 41c0760bd81dd084283814f0c432b466,
+    type: 2}
+  m_PrefabInternal: {fileID: 1316356811}
+--- !u!1 &1316356813 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000011766909148, guid: 41c0760bd81dd084283814f0c432b466,
+    type: 2}
+  m_PrefabInternal: {fileID: 1316356811}
+--- !u!1 &1316356814 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000013731061326, guid: 41c0760bd81dd084283814f0c432b466,
+    type: 2}
+  m_PrefabInternal: {fileID: 1316356811}
+--- !u!1 &1316356815 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000010517668602, guid: 41c0760bd81dd084283814f0c432b466,
+    type: 2}
+  m_PrefabInternal: {fileID: 1316356811}
+--- !u!1 &1316356816 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000010636551700, guid: 41c0760bd81dd084283814f0c432b466,
+    type: 2}
+  m_PrefabInternal: {fileID: 1316356811}
+--- !u!1 &1316356817 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000010207334600, guid: 41c0760bd81dd084283814f0c432b466,
+    type: 2}
+  m_PrefabInternal: {fileID: 1316356811}
+--- !u!1 &1316356818 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000012704122952, guid: 41c0760bd81dd084283814f0c432b466,
+    type: 2}
+  m_PrefabInternal: {fileID: 1316356811}
+--- !u!1 &1316356819 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000012404417072, guid: 41c0760bd81dd084283814f0c432b466,
+    type: 2}
+  m_PrefabInternal: {fileID: 1316356811}
+--- !u!1 &1316356820 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000012074436610, guid: 41c0760bd81dd084283814f0c432b466,
+    type: 2}
+  m_PrefabInternal: {fileID: 1316356811}
+--- !u!1 &1316356821 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000013428897076, guid: 41c0760bd81dd084283814f0c432b466,
+    type: 2}
+  m_PrefabInternal: {fileID: 1316356811}
 --- !u!1001 &1380676076
 Prefab:
   m_ObjectHideFlags: 0
