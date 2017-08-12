@@ -24,6 +24,7 @@ public class SidescrollerEndingScript : MonoBehaviour
 
             Vector3 playerPos = other.transform.position;
             PlayFireWorks(playerPos);
+
             Soundtrack.Stop();
 		}
 	}
