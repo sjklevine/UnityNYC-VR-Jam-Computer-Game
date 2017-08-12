@@ -12,10 +12,10 @@ public class WebcamDisplay : MonoBehaviour {
 		_renderer.material.mainTexture = _webcamTexture;
 		_webcamTexture.Play ();
 
-		/* We can use this to debug camera issues.
+		// We can use this to debug camera issues.
 		foreach (WebCamDevice device in WebCamTexture.devices) {
 			Debug.Log ("device name " + device.name);
-		}*/
+		}
 	}
 
 }
