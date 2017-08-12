@@ -1,1 +1,1 @@
-# UnityNYC-VR-Jam-Computer-Game
+A repository for the UnityNYC VR Jam on 8/11/2017!
