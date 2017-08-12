@@ -5,9 +5,12 @@ using UnityEngine;
 public class SidescrollerFallCatchScript : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
-		if (other.tag.Equals("Player")) {
-			PlayerControl playerScript = other.GetComponent<PlayerControl> ();
-			playerScript.TeleportToLastSafePosition ();
-		}
-	}
+        if (other.tag.Equals("Player"))
+        {
+            PlayerControl playerScript = other.GetComponent<PlayerControl>();
+            playerScript.TeleportToLastSafePosition();
+            GetComponent<AudioSource>().Play();
+
+        }
+    }
 }
