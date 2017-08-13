@@ -51,8 +51,7 @@ public class PlayerControl : MonoBehaviour
 		float h = Input.GetAxis("Horizontal");
 
 		// The Speed animator parameter is set to the absolute value of the horizontal input.
-		//TODO: Add an actual animation with a Speed float
-		//anim.SetFloat("Speed", Mathf.Abs(h));
+		anim.SetFloat("Speed", Mathf.Abs(h));
 
 		// If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
 		if(h * GetComponent<Rigidbody>().velocity.x < maxSpeed)
@@ -77,7 +76,6 @@ public class PlayerControl : MonoBehaviour
 		if(jump)
 		{
 			// Set the Jump animator trigger parameter.
-			//TODO: Add an actual animation with a Jump trigger
 			anim.SetTrigger("Jump");
 
 			// Play a random jump audio clip.
@@ -99,11 +97,9 @@ public class PlayerControl : MonoBehaviour
 		facingRight = !facingRight;
 
 		// Multiply the player's x local scale by -1.
-		/*
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
-		*/
 	}
 
 	private void InitializeSprites(){
