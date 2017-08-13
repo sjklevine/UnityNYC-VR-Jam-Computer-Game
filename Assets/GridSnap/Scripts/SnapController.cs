@@ -76,7 +76,7 @@ public class SnapController : MonoBehaviour
     private void CreateVisualDuplicates()
     {
         m_snappingObject = new GameObject();
-        m_snappingObject.transform.localScale = transform.localScale;
+		m_snappingObject.transform.localScale = transform.lossyScale;
 
         for(int i = 0; i < m_visuals.Length; ++i)
         {
