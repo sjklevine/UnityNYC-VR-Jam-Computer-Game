@@ -15,8 +15,8 @@ public class SidescrollerGameManager : MonoBehaviour {
 	// Classic Mario UI stuff
 	public TextMeshProUGUI coinsText;
 	public TextMeshProUGUI timeText;
-	public int coins = 0;
-	public float timeRemaining = 0f;
+	private int coins = 0;
+    private float timeRemaining = 0f;
 
 	private float startTime = 300f;
 	private GameState state;
@@ -25,8 +25,11 @@ public class SidescrollerGameManager : MonoBehaviour {
 		instance = this;
 		timeRemaining = startTime;
 
-		// Toggle stuff!
-		if (startWithStartScreen) {
+        // Coin action!
+        CoinController.OnCoinTotalUpdate += CollectCoin;
+
+        // Toggle stuff!
+        if (startWithStartScreen) {
 			state = GameState.Start;
 			blackScreen.SetActive (true);
 			gameStartTextObject.gameObject.SetActive (false);
@@ -39,9 +42,7 @@ public class SidescrollerGameManager : MonoBehaviour {
 
 	void Update() {
 		switch (state) {
-
 		case GameState.Start:
-			Debug.Log ("waiting for key");
 			if (Input.anyKeyDown) {	
 				//Start the game!
 				blackScreen.SetActive (false);
@@ -60,8 +61,8 @@ public class SidescrollerGameManager : MonoBehaviour {
 		}
 	}
 
-	public void CollectCoin() {
-		coins++;
+	public void CollectCoin(int newCoinCount) {
+        coins = newCoinCount;
 	}
 
 	private void UpdateText() {

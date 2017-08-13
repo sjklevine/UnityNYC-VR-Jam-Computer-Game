@@ -11,10 +11,12 @@ public class CoinController : MonoBehaviour {
 	[SerializeField] AudioClip _audio;
 
 	void OnTriggerEnter(Collider col){
-		Destroy (gameObject);
-		AudioSource.PlayClipAtPoint(_audio, transform.position);
-		_totalCoinsCollected++;
-		if (OnCoinTotalUpdate != null)
-			OnCoinTotalUpdate (_totalCoinsCollected);
+        if (col.tag.Equals("Player")) {
+            Destroy(gameObject);
+            AudioSource.PlayClipAtPoint(_audio, transform.position);
+            _totalCoinsCollected++;
+            if (OnCoinTotalUpdate != null)
+                OnCoinTotalUpdate(_totalCoinsCollected);
+        }
 	}
 }

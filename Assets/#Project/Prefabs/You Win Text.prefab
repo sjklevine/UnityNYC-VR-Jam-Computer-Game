@@ -737,7 +737,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -764,3 +764,7 @@ MonoBehaviour:
   thingToToggle: {fileID: 1741667594777498}
   runOnStart: 0
   stayHidden: 0
+  numToggles: 3
+  timeToFirstShow: 1
+  timeVisible: 0.5
+  timeHidden: 0.5

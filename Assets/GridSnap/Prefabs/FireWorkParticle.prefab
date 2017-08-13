@@ -146,7 +146,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 20
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -548,7 +548,7 @@ ParticleSystem:
     boxY: 1
     boxZ: 1
     radius:
-      value: 0.01
+      value: 0.03
       mode: 0
       spread: 0
       speed:
