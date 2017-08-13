@@ -15751,7 +15751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableWhenIdle: 1
-  touchHighlightColor: {r: 1, g: 1, b: 1, a: 0.084}
+  touchHighlightColor: {r: 0.3019608, g: 0.827451, b: 1, a: 0.08235294}
   allowedTouchControllers: 0
   ignoredColliders: []
   isGrabbable: 1
