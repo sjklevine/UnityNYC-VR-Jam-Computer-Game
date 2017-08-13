@@ -19,8 +19,16 @@ public class SnapController : MonoBehaviour
 
     private Rigidbody m_rigidBody = null;
 
+	private bool m_isXLocked = false;
+	private bool m_isYLocked = false;
+	private bool m_isZLocked = false;
+
+	private GameObject m_player;
+
     private void Start()
     {
+		m_player = GameObject.FindGameObjectWithTag ("Player");
+
         m_gridSnapManager = FindObjectOfType<GridSnapManager>();
         Debug.Assert(m_gridSnapManager != null, "GridSnapManager doesn't eixst in current scene!");
 
@@ -28,6 +36,10 @@ public class SnapController : MonoBehaviour
         m_rigidBody = GetComponent<Rigidbody>();
         m_rigidBody.isKinematic = true;
         m_rigidBody.useGravity = false;
+
+		m_isXLocked = (m_rigidBody.constraints & RigidbodyConstraints.FreezePositionX) != RigidbodyConstraints.None;
+		m_isYLocked = (m_rigidBody.constraints & RigidbodyConstraints.FreezePositionY) != RigidbodyConstraints.None;
+		m_isZLocked = (m_rigidBody.constraints & RigidbodyConstraints.FreezePositionZ) != RigidbodyConstraints.None;
 
         m_interactableObjectScript = GetComponent<VRTK_InteractableObject>();
         Debug.Assert(m_interactableObjectScript != null, "VRTK_InteractableObejct doesn't exist on " + transform.name);
@@ -41,7 +53,7 @@ public class SnapController : MonoBehaviour
         if (!m_isSnapping)
             return;
 
-        Vector3 snapPos = m_gridSnapManager.GetSnapPos(transform.position);
+        Vector3 snapPos = m_gridSnapManager.GetSnapPos(transform.position, m_isXLocked, m_isYLocked, m_isZLocked);
         m_snappingObject.transform.position = snapPos;
     }
 
@@ -56,11 +68,17 @@ public class SnapController : MonoBehaviour
 
     private void OnStopGrab(object sender, InteractableObjectEventArgs e)
     {
+		for (int i = 0; i < m_snappingObject.transform.childCount; ++i) {
+			Debug.Log (m_snappingObject.transform.GetChild (i).name);
+		}	
+
         Debug.Log("Ungrabbed");
         m_isSnapping = false;
         transform.position = m_snappingObject.transform.position;
         transform.rotation = m_snappingObject.transform.rotation;
-        Destroy(m_snappingObject);
+		m_snappingObject.SetActive (false);
+		m_player.transform.parent = null;
+		Destroy(m_snappingObject);
         SetRealPlatformGraphics(true);
     }
 

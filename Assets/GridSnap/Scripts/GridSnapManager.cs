@@ -14,4 +14,16 @@ public class GridSnapManager : MonoBehaviour
         snapPos.z = Mathf.Round(currentPos.z / m_gridUnitSize) * m_gridUnitSize;
         return snapPos;
     }
+
+	public Vector3 GetSnapPos(Vector3 currentPos, bool isXLoced, bool isYLocked, bool isZLocked)
+	{
+		Vector3 snapPos = currentPos;
+		if(!isXLoced)
+			snapPos.x = Mathf.Round(currentPos.x / m_gridUnitSize) * m_gridUnitSize;
+		if(!isYLocked)
+			snapPos.y = Mathf.Round(currentPos.y / m_gridUnitSize) * m_gridUnitSize;
+		if(!isZLocked)
+			snapPos.z = Mathf.Round(currentPos.z / m_gridUnitSize) * m_gridUnitSize;
+		return snapPos;
+	}
 }
