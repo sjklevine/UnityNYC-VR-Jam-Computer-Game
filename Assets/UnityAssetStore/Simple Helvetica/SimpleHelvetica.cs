@@ -2,6 +2,9 @@
 //email: info@pepwuper.com
 //version 1.0
 
+// SAM WAS HERE
+#pragma warning disable 0618
+
 using UnityEditor;
 using UnityEngine;
 using System.Collections;
@@ -401,8 +404,7 @@ public class SimpleHelvetica : MonoBehaviour {
 		FreezeRotationZ=false;
 		
 		//apply changes
-		SetRigidbodyVariables();
-		
+		SetRigidbodyVariables();	
 	}
 	
 	public void ApplyMeshRenderer(){
