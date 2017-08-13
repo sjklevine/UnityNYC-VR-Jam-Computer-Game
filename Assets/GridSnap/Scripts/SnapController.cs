@@ -15,12 +15,17 @@ public class SnapController : MonoBehaviour
 
     private bool m_isSnapping = false;
 
+    private Rigidbody m_rigidBody = null;
+
     private void Start()
     {
         m_gridSnapManager = FindObjectOfType<GridSnapManager>();
         Debug.Assert(m_gridSnapManager != null, "GridSnapManager doesn't eixst in current scene!");
 
         m_cube = transform.Find("Cube").gameObject;
+        m_rigidBody = GetComponent<Rigidbody>();
+        m_rigidBody.isKinematic = true;
+        m_rigidBody.useGravity = false;
 
         m_interactableObjectScript = GetComponent<VRTK_InteractableObject>();
         Debug.Assert(m_interactableObjectScript != null, "VRTK_InteractableObejct doesn't exist on " + transform.name);
@@ -36,6 +41,15 @@ public class SnapController : MonoBehaviour
 
         Vector3 snapPos = m_gridSnapManager.GetSnapPos(transform.position);
         m_snappingObject.transform.position = snapPos;
+    }
+
+    public void OnThrow()
+    {
+        m_snappingObject = Object.Instantiate(m_cube);
+        m_isSnapping = true;
+        SetRealPlatformGraphics(false);
+        m_rigidBody.isKinematic = false;
+        m_rigidBody.useGravity = true;
     }
 
     private void OnGrab(object sender, InteractableObjectEventArgs e)
