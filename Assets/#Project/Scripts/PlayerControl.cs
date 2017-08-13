@@ -12,6 +12,7 @@ public class PlayerControl : MonoBehaviour
 	public GameObject sprite_walking;
 	public GameObject sprite_jump;
 
+	public float bounceForce = 50f;
 	public float moveForce = 365f;			// Amount of force added to move the player left and right.
 	public float maxSpeed = 5f;				// The fastest the player can travel in the x axis.
 	public AudioClip[] jumpClips;			// Array of clips for when the player jumps.
@@ -31,9 +32,6 @@ public class PlayerControl : MonoBehaviour
 
 	void Update()
 	{
-		// The player is grounded if a linecast to the groundcheck position hits anything on the ground layer.
-		RaycastHit hitInfo;
-		grounded = Physics.Raycast(new Ray(transform.position, Vector3.down), out hitInfo, 1f, 1 << LayerMask.NameToLayer("Ground"));  
 
 		// If the jump button is pressed and the player is grounded then the player should jump.
 		if (Input.GetButtonDown ("Jump") && grounded) {
@@ -111,5 +109,31 @@ public class PlayerControl : MonoBehaviour
 	public void TeleportToLastSafePosition() {
 		this.transform.position = this.lastGroundedPosition + Vector3.up * 1.0f;
 		GetComponent<Rigidbody> ().velocity = Vector3.zero;
+	}
+
+	void OnCollisionEnter(Collision col){
+		if (col.collider.gameObject.layer.Equals(LayerMask.NameToLayer("Ground"))) {
+			grounded = true;
+			//bounce if we hit a vertical surface
+			if (Mathf.Abs(col.contacts [0].normal.x) == 1.0) {
+				GetComponent<Rigidbody>().AddForce(new Vector2(col.contacts [0].normal.x * bounceForce, 0.0f));
+			}
+		}
+	}
+
+	void OnCollisionStay(Collision col){
+		if (col.collider.gameObject.layer.Equals(LayerMask.NameToLayer("Ground"))) {
+			grounded = true;
+			//bounce if we hit a vertical surface
+			if (Mathf.Abs(col.contacts [0].normal.x) == 1.0) {
+				GetComponent<Rigidbody>().AddForce(new Vector2(col.contacts [0].normal.x * bounceForce, 0.0f));
+			}
+		}
+	}
+
+	void OnCollisionExit(Collision col){
+		if (col.collider.gameObject.layer.Equals(LayerMask.NameToLayer("Ground"))) {
+			grounded = false;
+		}
 	}
 }
