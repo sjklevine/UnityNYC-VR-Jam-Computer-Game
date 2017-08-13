@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class SidescrollerEndingScript : MonoBehaviour
 {
-	public SimpleTimedToggleVisibilty endgameText;
-
     [SerializeField]
     private GameObject m_fireWorksPrefab;
     [SerializeField]
@@ -15,17 +13,13 @@ public class SidescrollerEndingScript : MonoBehaviour
     private const float m_fireWorksInterval = 1f;
     private const int m_maxFireWorksCount = 5;
 
-    public AudioSource Soundtrack;
- 
 	void OnTriggerEnter(Collider other) {
 		if (other.tag.Equals("Player")) {
-            endgameText.BeginToggling();
-            endgameText.GetComponent<AudioSource>().Play();
-
             Vector3 playerPos = other.transform.position;
             PlayFireWorks(playerPos);
 
-            Soundtrack.Stop();
+            SidescrollerGameManager.instance.LevelWin();
+
 		}
 	}
 

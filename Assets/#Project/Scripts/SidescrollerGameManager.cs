@@ -8,12 +8,16 @@ public class SidescrollerGameManager : MonoBehaviour {
 	public enum GameState {Start, Running};
 	public bool startWithStartScreen;
 
+    // Handy reference
+    public AudioSource soundtrack;
+
 	// Start/transition stuff
 	public GameObject blackScreen;
 	public SimpleTimedToggleVisibilty gameStartTextObject;
+    public SimpleTimedToggleVisibilty youWinTextObject;
 
-	// Classic Mario UI stuff
-	public TextMeshProUGUI coinsText;
+    // Classic Mario UI stuff
+    public TextMeshProUGUI coinsText;
 	public TextMeshProUGUI timeText;
 	private int coins = 0;
     private float timeRemaining = 0f;
@@ -65,6 +69,25 @@ public class SidescrollerGameManager : MonoBehaviour {
         coins = newCoinCount;
 	}
 
+    // For completing a level!
+    public void LevelWin()
+    {
+        // Text toggle!
+        youWinTextObject.BeginToggling();
+
+        // Audio!
+        youWinTextObject.GetComponent<AudioSource>().Play();
+        soundtrack.Stop();
+    }
+
+    // For resetting to start!
+    public void ResetLevel()
+    {
+        // 
+
+    }
+
+    // Privates
 	private void UpdateText() {
 		coinsText.text = "x " + coins.ToString ("D2");
 		timeText.text = Mathf.CeilToInt(timeRemaining).ToString ("D3");
