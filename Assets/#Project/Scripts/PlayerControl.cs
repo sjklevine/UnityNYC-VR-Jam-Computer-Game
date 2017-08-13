@@ -8,6 +8,9 @@ public class PlayerControl : MonoBehaviour
 	[HideInInspector]
 	public bool jump = false;				// Condition for whether the player should jump.
 
+	public GameObject sprite_idle;
+	public GameObject sprite_walking;
+	public GameObject sprite_jump;
 
 	public float moveForce = 365f;			// Amount of force added to move the player left and right.
 	public float maxSpeed = 5f;				// The fastest the player can travel in the x axis.
@@ -22,6 +25,7 @@ public class PlayerControl : MonoBehaviour
 	{
 		// Setting up references.
 		anim = GetComponent<Animator>();
+		InitializeSprites();
 	}
 
 
@@ -100,6 +104,12 @@ public class PlayerControl : MonoBehaviour
 		theScale.x *= -1;
 		transform.localScale = theScale;
 		*/
+	}
+
+	private void InitializeSprites(){
+		sprite_idle.SetActive (true);
+		sprite_walking.SetActive (false);
+		sprite_jump.SetActive (false);
 	}
 
 	public void TeleportToLastSafePosition() {
