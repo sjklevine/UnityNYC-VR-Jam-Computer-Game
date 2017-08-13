@@ -1,34 +1,19 @@
 fileFormatVersion: 2
-guid: bde5bb76efd2e7b4e986ce833097b8da
-timeCreated: 1502605233
+guid: a5f911398d6541a48b12741633e7de28
+timeCreated: 1502601834
 licenseType: Free
-SketchUpImporter:
-  generateBackFace: 0
-  mergeCoplanarFaces: 0
-  selectedNodes: 
-  assetHash:
-    serializedVersion: 2
-    Hash: 6fd20a6764467b486c8f8e3fb9689c1d
-  longitude: 0
-  latitude: 0
-  northCorrection: 0
-  fileUnit: 0
-  sketchUpImportData:
-    defaultCamera:
-      position: {x: 0, y: 0, z: 0}
-      lookAt: {x: 0, y: 0, z: 1}
-      up: {x: 0, y: 1, z: 0}
-      fov: 45
-      aspectRatio: 1.33
-      orthoSize: 0
-      isPerspective: 1
-    scenes: []
+ModelImporter:
   serializedVersion: 19
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Model
   materials:
     importMaterials: 1
-    materialName: 2
-    materialSearch: 0
+    materialName: 0
+    materialSearch: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -51,7 +36,7 @@ SketchUpImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.0254
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -70,7 +55,7 @@ SketchUpImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
