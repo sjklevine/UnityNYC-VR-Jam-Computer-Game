@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
 
-public class SnapController : MonoBehaviour
+public class ThrowSnapController : MonoBehaviour
 {
     private VRTK_InteractableObject m_interactableObjectScript;
 
@@ -13,24 +13,19 @@ public class SnapController : MonoBehaviour
     private GameObject m_snappingObject;
 
     private bool m_isSnapping = false;
-
     private Rigidbody m_rigidBody = null;
-
+    
     private void Start()
     {
         m_gridSnapManager = FindObjectOfType<GridSnapManager>();
         Debug.Assert(m_gridSnapManager != null, "GridSnapManager doesn't eixst in current scene!");
 
         m_cube = transform.Find("Cube").gameObject;
-        m_rigidBody = GetComponent<Rigidbody>();
-        m_rigidBody.isKinematic = true;
-        m_rigidBody.useGravity = false;
 
         m_interactableObjectScript = GetComponent<VRTK_InteractableObject>();
         Debug.Assert(m_interactableObjectScript != null, "VRTK_InteractableObejct doesn't exist on " + transform.name);
 
-        m_interactableObjectScript.InteractableObjectGrabbed += OnGrab;
-        m_interactableObjectScript.InteractableObjectUngrabbed += OnStopGrab;
+        m_interactableObjectScript.InteractableObjectUngrabbed += OnThrow;
     }
 
     private void Update()
@@ -40,33 +35,14 @@ public class SnapController : MonoBehaviour
 
         Vector3 snapPos = m_gridSnapManager.GetSnapPos(transform.position);
         m_snappingObject.transform.position = snapPos;
+        Debug.Log(snapPos.y);
     }
 
-    public void OnThrow()
+    private void OnThrow(object sender, InteractableObjectEventArgs e)
     {
         m_snappingObject = Object.Instantiate(m_cube);
         m_isSnapping = true;
         SetRealPlatformGraphics(false);
-        m_rigidBody.isKinematic = false;
-        m_rigidBody.useGravity = true;
-    }
-
-    private void OnGrab(object sender, InteractableObjectEventArgs e)
-    {
-        Debug.Log("grabbed");
-        m_snappingObject = Object.Instantiate(m_cube);
-        m_isSnapping = true;
-        SetRealPlatformGraphics(false);
-    }
-
-    private void OnStopGrab(object sender, InteractableObjectEventArgs e)
-    {
-        Debug.Log("Ungrabbed");
-        m_isSnapping = false;
-        transform.position = m_snappingObject.transform.position;
-        transform.rotation = m_snappingObject.transform.rotation;
-        Destroy(m_snappingObject);
-        SetRealPlatformGraphics(true);
     }
 
     private void SetRealPlatformGraphics(bool isOn)
