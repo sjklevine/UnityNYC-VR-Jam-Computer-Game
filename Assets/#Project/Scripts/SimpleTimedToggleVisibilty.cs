@@ -20,7 +20,10 @@ public class SimpleTimedToggleVisibilty : MonoBehaviour {
 	public void BeginToggling() {
 		StartCoroutine (Run ());		
 	}
-
+	public void StopAndHide() {
+		StopCoroutine ("Run");
+		thingToToggle.SetActive (false);
+	}
 	private IEnumerator Run() {
 		yield return new WaitForSeconds (timeToFirstShow);
 		thingToToggle.SetActive (true);
@@ -37,9 +40,7 @@ public class SimpleTimedToggleVisibilty : MonoBehaviour {
 			thingToToggle.SetActive (false);
 			yield return new WaitForSeconds (timeHidden);
 		}
-		if (stayHidden) {
-			GameObject.Destroy (this.gameObject);
-		} else {
+		if (!stayHidden) {
 			thingToToggle.SetActive (true);
 		}
 	}
