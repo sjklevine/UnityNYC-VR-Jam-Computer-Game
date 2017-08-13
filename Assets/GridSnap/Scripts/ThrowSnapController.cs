@@ -25,6 +25,7 @@ public class ThrowSnapController : MonoBehaviour
         m_interactableObjectScript = GetComponent<VRTK_InteractableObject>();
         Debug.Assert(m_interactableObjectScript != null, "VRTK_InteractableObejct doesn't exist on " + transform.name);
 
+		m_interactableObjectScript.InteractableObjectGrabbed += OnGrab;
         m_interactableObjectScript.InteractableObjectUngrabbed += OnThrow;
     }
 
@@ -35,8 +36,16 @@ public class ThrowSnapController : MonoBehaviour
 
         Vector3 snapPos = m_gridSnapManager.GetSnapPos(transform.position);
         m_snappingObject.transform.position = snapPos;
-        Debug.Log(snapPos.y);
+		m_snappingObject.transform.rotation = Quaternion.identity;
     }
+
+	private void OnGrab(object sender, InteractableObjectEventArgs e)
+	{
+		if(m_snappingObject != null)
+			Destroy(m_snappingObject);
+		m_isSnapping = false;
+		SetRealPlatformGraphics(true);
+	}
 
     private void OnThrow(object sender, InteractableObjectEventArgs e)
     {
