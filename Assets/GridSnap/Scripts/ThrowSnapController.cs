@@ -13,7 +13,6 @@ public class ThrowSnapController : MonoBehaviour
     private GameObject m_snappingObject;
 
     private bool m_isSnapping = false;
-    private Rigidbody m_rigidBody = null;
     
     private void Start()
     {
