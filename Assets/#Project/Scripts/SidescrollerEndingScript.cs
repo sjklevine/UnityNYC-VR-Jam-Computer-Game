@@ -18,8 +18,8 @@ public class SidescrollerEndingScript : MonoBehaviour
             Vector3 playerPos = other.transform.position;
             PlayFireWorks(playerPos);
 
+			// Defer to the game manager for the rest of the sequence!
             SidescrollerGameManager.instance.LevelWin();
-
 		}
 	}
 

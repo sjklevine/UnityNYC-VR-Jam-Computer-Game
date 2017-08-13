@@ -1010,6 +1010,12 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+--- !u!114 &201620816 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114459002110637882, guid: 61bd4fd79a20da748be36d82d438a5f1,
+    type: 2}
+  m_PrefabInternal: {fileID: 630211766}
+  m_Script: {fileID: 1453722849, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
 --- !u!1001 &202352662
 Prefab:
   m_ObjectHideFlags: 0
@@ -2652,6 +2658,41 @@ Prefab:
       propertyPath: startWithStartScreen
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114190560163280470, guid: 0ea47235868e0994b811c58158f580f6,
+        type: 2}
+      propertyPath: world
+      value: 
+      objectReference: {fileID: 301291159}
+    - target: {fileID: 114190560163280470, guid: 0ea47235868e0994b811c58158f580f6,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 900668229}
+    - target: {fileID: 114190560163280470, guid: 0ea47235868e0994b811c58158f580f6,
+        type: 2}
+      propertyPath: soundtrack
+      value: 
+      objectReference: {fileID: 1324576003}
+    - target: {fileID: 114190560163280470, guid: 0ea47235868e0994b811c58158f580f6,
+        type: 2}
+      propertyPath: youWinTextObject
+      value: 
+      objectReference: {fileID: 116616492}
+    - target: {fileID: 114190560163280470, guid: 0ea47235868e0994b811c58158f580f6,
+        type: 2}
+      propertyPath: currentLevelHolder
+      value: 
+      objectReference: {fileID: 1625927578}
+    - target: {fileID: 114190560163280470, guid: 0ea47235868e0994b811c58158f580f6,
+        type: 2}
+      propertyPath: blackScreenText
+      value: 
+      objectReference: {fileID: 201620816}
+    - target: {fileID: 114190560163280470, guid: 0ea47235868e0994b811c58158f580f6,
+        type: 2}
+      propertyPath: blackScreenTextObject
+      value: 
+      objectReference: {fileID: 1147263371}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ea47235868e0994b811c58158f580f6, type: 2}
   m_IsPrefabParent: 0
@@ -5837,6 +5878,11 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &900668229 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1812726367385416, guid: 82a54e4d29e338c4db9865589dd8634f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1630473609}
 --- !u!1 &905200896
 GameObject:
   m_ObjectHideFlags: 0
@@ -6427,7 +6473,7 @@ Transform:
   m_Children:
   - {fileID: 1225715656}
   m_Father: {fileID: 1609367091}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &993828543
 MonoBehaviour:
@@ -6444,7 +6490,7 @@ MonoBehaviour:
   runOnStart: 1
   stayHidden: 1
   numToggles: 3
-  timeToFirstShow: 1
+  timeToFirstShow: 0
   timeVisible: 0.5
   timeHidden: 0.5
 --- !u!1 &995549373
@@ -7197,6 +7243,12 @@ Transform:
   m_Father: {fileID: 1328314946}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1147263371 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114183111382439828, guid: 61bd4fd79a20da748be36d82d438a5f1,
+    type: 2}
+  m_PrefabInternal: {fileID: 630211766}
+  m_Script: {fileID: 11500000, guid: 1795f9e55af39e649b7e45bbf9076129, type: 3}
 --- !u!1 &1149840691
 GameObject:
   m_ObjectHideFlags: 0
@@ -8234,6 +8286,11 @@ Prefab:
     - target: {fileID: 82743086168881488, guid: 4b339f4ae506f2b40905c0950aca077d,
         type: 2}
       propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82743086168881488, guid: 4b339f4ae506f2b40905c0950aca077d,
+        type: 2}
+      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -11071,8 +11128,8 @@ Transform:
   m_Children:
   - {fileID: 724371758}
   - {fileID: 301291160}
-  - {fileID: 1875160647}
   - {fileID: 993828542}
+  - {fileID: 1875160647}
   - {fileID: 1554093067}
   - {fileID: 630211767}
   - {fileID: 895055184}
@@ -11694,6 +11751,11 @@ Prefab:
         type: 2}
       propertyPath: m_Center.z
       value: 0.0000009701278
+      objectReference: {fileID: 0}
+    - target: {fileID: 114749456264718194, guid: 82a54e4d29e338c4db9865589dd8634f,
+        type: 2}
+      propertyPath: jumpForce
+      value: 400
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 82a54e4d29e338c4db9865589dd8634f, type: 2}
@@ -13171,7 +13233,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4091968262413108, guid: 8e7d42918d5f71741a51dbb59b5803a9, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1950268367374990, guid: 8e7d42918d5f71741a51dbb59b5803a9, type: 2}
       propertyPath: m_Name
@@ -13705,12 +13767,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e13693a8ccf1ac74682711735bb77dcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endgameText: {fileID: 116616492}
   m_fireWorksPrefab: {fileID: 1015596589872556, guid: b5aebf21e2fbb134fb3d065303fd51bf,
     type: 2}
   m_xOffset: 1
   m_yOffset: 1
-  Soundtrack: {fileID: 1324576003}
 --- !u!23 &1923829902
 MeshRenderer:
   m_ObjectHideFlags: 0
