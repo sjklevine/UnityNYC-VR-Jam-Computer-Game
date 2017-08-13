@@ -116,7 +116,7 @@ public class PlayerControl : MonoBehaviour
 
 	void OnCollisionEnter(Collision col){
 		if (col.collider.gameObject.layer.Equals(LayerMask.NameToLayer("Ground"))) {
-			this.transform.parent = col.gameObject.transform;
+			//this.transform.parent = col.gameObject.transform;
 			grounded = true;
 			//bounce if we hit a vertical surface
 			if (Mathf.Abs(col.contacts [0].normal.x) == 1.0) {
