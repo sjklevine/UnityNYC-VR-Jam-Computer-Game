@@ -16,19 +16,17 @@ public class PlatformGrabHelper : MonoBehaviour {
 
 		cachedAudio = this.GetComponent<AudioSource> ();
 
-		GetComponent<VRTK_InteractableObject>().InteractableObjectTouched += new InteractableObjectEventHandler(ObjectGrabbed);
-		GetComponent<VRTK_InteractableObject>().InteractableObjectUntouched += new InteractableObjectEventHandler(ObjectUngrabbed);
+		GetComponent<VRTK_InteractableObject>().InteractableObjectGrabbed += new InteractableObjectEventHandler(ObjectGrabbed);
+		GetComponent<VRTK_InteractableObject>().InteractableObjectUngrabbed += new InteractableObjectEventHandler(ObjectUngrabbed);
 	}
 
 	private void ObjectGrabbed(object sender, InteractableObjectEventArgs e){
-		helperArrows.SetActive(true);
 		if (cachedAudio != null) {
 			cachedAudio.Play ();
 		}
 	}
 
 	private void ObjectUngrabbed(object sender, InteractableObjectEventArgs e){
-		helperArrows.SetActive(false);
 		if (cachedAudio != null) {
 			cachedAudio.Stop ();
 		}
