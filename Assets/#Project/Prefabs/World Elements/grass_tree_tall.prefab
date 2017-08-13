@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 114354728898252210}
   - component: {fileID: 114533416195950590}
   - component: {fileID: 114320954358597922}
+  - component: {fileID: 114018618849654828}
   m_Layer: 8
   m_Name: grass_tree_tall
   m_TagString: Untagged
@@ -100,7 +101,7 @@ Transform:
   m_GameObject: {fileID: 1676287988004516}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 22.72, y: 6.9599996, z: -8.39}
-  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4678261688162062}
   - {fileID: 4463982902030574}
@@ -226,6 +227,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0563675, y: 1.7484355, z: 1.0422373}
   m_Center: {x: -0.9910158, y: 0.87421775, z: -0.99808294}
+--- !u!114 &114018618849654828
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1676287988004516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5cb290765f7f1e46916e988d26d11cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_leafDropParticlePrefab: {fileID: 1919522807355544, guid: cbc6a7945158ba84ebc5042e90e68d35,
+    type: 2}
 --- !u!114 &114320954358597922
 MonoBehaviour:
   m_ObjectHideFlags: 1

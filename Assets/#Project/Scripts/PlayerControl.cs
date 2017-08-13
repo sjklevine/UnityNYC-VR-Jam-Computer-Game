@@ -20,6 +20,7 @@ public class PlayerControl : MonoBehaviour
 	private bool grounded = false;			// Whether or not the player is grounded.
 	private Animator anim;					// Reference to the player's animator component.
 	private Vector3 lastGroundedPosition;
+	private SidescrollerGameManager gm;     // Cached reference to game manager
 
 
 	void Awake()
@@ -27,6 +28,7 @@ public class PlayerControl : MonoBehaviour
 		// Setting up references.
 		anim = GetComponent<Animator>();
 		InitializeSprites();
+		gm = SidescrollerGameManager.instance;
 	}
 
 
@@ -45,46 +47,47 @@ public class PlayerControl : MonoBehaviour
 
 	void FixedUpdate ()
 	{
-		// Cache the horizontal input.
-		float h = Input.GetAxis("Horizontal");
+		if (gm.state == SidescrollerGameManager.GameState.Running) {
+			// Cache the horizontal input.
+			float h = Input.GetAxis ("Horizontal");
 
-		// The Speed animator parameter is set to the absolute value of the horizontal input.
-		anim.SetFloat("Speed", Mathf.Abs(h));
+			// The Speed animator parameter is set to the absolute value of the horizontal input.
+			anim.SetFloat ("Speed", Mathf.Abs (h));
 
-		// If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
-		if(h * GetComponent<Rigidbody>().velocity.x < maxSpeed)
-			// ... add a force to the player.
-			GetComponent<Rigidbody>().AddForce(Vector2.left * h * moveForce);
+			// If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
+			if (h * GetComponent<Rigidbody> ().velocity.x < maxSpeed)
+				// ... add a force to the player.
+				GetComponent<Rigidbody> ().AddForce (Vector2.left * h * moveForce);
 
-		// If the player's horizontal velocity is greater than the maxSpeed...
-		if(Mathf.Abs(GetComponent<Rigidbody>().velocity.x) > maxSpeed)
-			// ... set the player's velocity to the maxSpeed in the x axis.
-			GetComponent<Rigidbody>().velocity = new Vector2(Mathf.Sign(GetComponent<Rigidbody>().velocity.x) * maxSpeed, GetComponent<Rigidbody>().velocity.y);
+			// If the player's horizontal velocity is greater than the maxSpeed...
+			if (Mathf.Abs (GetComponent<Rigidbody> ().velocity.x) > maxSpeed)
+				// ... set the player's velocity to the maxSpeed in the x axis.
+				GetComponent<Rigidbody> ().velocity = new Vector2 (Mathf.Sign (GetComponent<Rigidbody> ().velocity.x) * maxSpeed, GetComponent<Rigidbody> ().velocity.y);
 
-		// If the input is moving the player right and the player is facing left...
-		if(h > 0 && !facingRight)
-			// ... flip the player.
-			Flip();
-		// Otherwise if the input is moving the player left and the player is facing right...
-		else if(h < 0 && facingRight)
-			// ... flip the player.
-			Flip();
+			// If the input is moving the player right and the player is facing left...
+			if (h > 0 && !facingRight)
+				// ... flip the player.
+				Flip ();
+			// Otherwise if the input is moving the player left and the player is facing right...
+			else if (h < 0 && facingRight)
+				// ... flip the player.
+				Flip ();
 
-		// If the player should jump...
-		if(jump)
-		{
-			// Set the Jump animator trigger parameter.
-			anim.SetTrigger("Jump");
+			// If the player should jump...
+			if (jump) {
+				// Set the Jump animator trigger parameter.
+				anim.SetTrigger ("Jump");
 
-			// Play a random jump audio clip.
-			int i = Random.Range(0, jumpClips.Length);
-		    AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
+				// Play a random jump audio clip.
+				int i = Random.Range (0, jumpClips.Length);
+				AudioSource.PlayClipAtPoint (jumpClips [i], transform.position);
 
-			// Add a vertical force to the player.
-			GetComponent<Rigidbody>().AddForce(new Vector2(0f, jumpForce));
+				// Add a vertical force to the player.
+				GetComponent<Rigidbody> ().AddForce (new Vector2 (0f, jumpForce));
 
-			// Make sure the player can't jump again until the jump conditions from Update are satisfied.
-			jump = false;
+				// Make sure the player can't jump again until the jump conditions from Update are satisfied.
+				jump = false;
+			}
 		}
 	}
 
