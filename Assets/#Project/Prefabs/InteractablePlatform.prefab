@@ -215,7 +215,6 @@ GameObject:
   - component: {fileID: 54028298111856322}
   - component: {fileID: 114490975118521564}
   - component: {fileID: 82947269260606606}
-  - component: {fileID: 114936001885937822}
   m_Layer: 0
   m_Name: InteractablePlatform
   m_TagString: Untagged
@@ -682,19 +681,6 @@ MonoBehaviour:
   useOverrideButton: 0
   allowedUseControllers: 0
   usingState: 0
---- !u!114 &114936001885937822
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1916935924539834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad84791709e24144f925b78d2f693a76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_visuals:
-  - {fileID: 1130943674845544}
 --- !u!212 &212004152828819384
 SpriteRenderer:
   m_ObjectHideFlags: 1
