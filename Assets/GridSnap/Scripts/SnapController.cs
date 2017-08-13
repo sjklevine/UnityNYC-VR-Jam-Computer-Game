@@ -9,7 +9,10 @@ public class SnapController : MonoBehaviour
 
     private GridSnapManager m_gridSnapManager;
 
-    private GameObject m_cube;
+    //private GameObject m_cube;
+    [SerializeField]
+    private GameObject[] m_visuals;
+
     private GameObject m_snappingObject;
 
     private bool m_isSnapping = false;
@@ -21,7 +24,7 @@ public class SnapController : MonoBehaviour
         m_gridSnapManager = FindObjectOfType<GridSnapManager>();
         Debug.Assert(m_gridSnapManager != null, "GridSnapManager doesn't eixst in current scene!");
 
-        m_cube = transform.Find("Cube").gameObject;
+        //m_cube = transform.Find("Cube").gameObject;
         m_rigidBody = GetComponent<Rigidbody>();
         m_rigidBody.isKinematic = true;
         m_rigidBody.useGravity = false;
@@ -42,19 +45,11 @@ public class SnapController : MonoBehaviour
         m_snappingObject.transform.position = snapPos;
     }
 
-    public void OnThrow()
-    {
-        m_snappingObject = Object.Instantiate(m_cube);
-        m_isSnapping = true;
-        SetRealPlatformGraphics(false);
-        m_rigidBody.isKinematic = false;
-        m_rigidBody.useGravity = true;
-    }
-
     private void OnGrab(object sender, InteractableObjectEventArgs e)
     {
         Debug.Log("grabbed");
-        m_snappingObject = Object.Instantiate(m_cube);
+        //m_snappingObject = Object.Instantiate(m_cube);
+        CreateVisualDuplicates();
         m_isSnapping = true;
         SetRealPlatformGraphics(false);
     }
@@ -71,6 +66,22 @@ public class SnapController : MonoBehaviour
 
     private void SetRealPlatformGraphics(bool isOn)
     {
-        m_cube.SetActive(isOn);
+        //m_cube.SetActive(isOn);
+        for(int i = 0; i < m_visuals.Length; ++i)
+        {
+            m_visuals[i].SetActive(isOn);
+        }
     }
+
+    private void CreateVisualDuplicates()
+    {
+        m_snappingObject = new GameObject();
+        m_snappingObject.transform.localScale = transform.localScale;
+
+        for(int i = 0; i < m_visuals.Length; ++i)
+        {
+            Object.Instantiate(m_visuals[i], m_snappingObject.transform);
+        }
+    }
+
 }
