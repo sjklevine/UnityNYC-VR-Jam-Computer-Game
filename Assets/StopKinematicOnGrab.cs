@@ -4,7 +4,6 @@ using System.Collections;
 
 public class StopKinematicOnGrab : MonoBehaviour {
 
-	[SerializeField] GameObject helperArrows;
 	void Start (){
 		if (GetComponent<VRTK_InteractableObject>() == null){
 			Debug.LogError("Required to be attached to an Object that has the VRTK_InteractableObject script attached to it");
