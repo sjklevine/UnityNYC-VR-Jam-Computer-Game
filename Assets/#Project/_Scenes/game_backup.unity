@@ -5355,7 +5355,8 @@ MonoBehaviour:
   jump: 0
   moveForce: 15
   maxSpeed: 1.5
-  jumpClips: []
+  jumpClips:
+  - {fileID: 8300000, guid: 60139b9a5714b0a4fa7d03c6687bcf56, type: 3}
   jumpForce: 200
 --- !u!95 &1497315867
 Animator:
@@ -5636,6 +5637,11 @@ Prefab:
       value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 114155331102286210, guid: deb3c022d155fc5428b33ef1f1bf3fea,
+        type: 2}
+      propertyPath: world
+      value: 
+      objectReference: {fileID: 301291160}
+    - target: {fileID: 114189041072105742, guid: deb3c022d155fc5428b33ef1f1bf3fea,
         type: 2}
       propertyPath: world
       value: 
