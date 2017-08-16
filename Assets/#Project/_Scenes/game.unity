@@ -731,6 +731,79 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a788bdead80f3845acca66488b630cb, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &156865911 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1812913875553006, guid: 61bd4fd79a20da748be36d82d438a5f1,
+    type: 2}
+  m_PrefabInternal: {fileID: 630211766}
+--- !u!65 &156865914
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 156865911}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 250, y: 130, z: 10}
+  m_Center: {x: 0, y: -30, z: 0}
+--- !u!54 &156865915
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 156865911}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &156865916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 156865911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3abaf4521bf2344ea21ed3020b98eb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableWhenIdle: 1
+  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
+  allowedTouchControllers: 0
+  ignoredColliders: []
+  isGrabbable: 1
+  holdButtonToGrab: 1
+  stayGrabbedOnTeleport: 1
+  validDrop: 1
+  grabOverrideButton: 0
+  allowedGrabControllers: 0
+  grabAttachMechanicScript: {fileID: 0}
+  secondaryGrabActionScript: {fileID: 0}
+  isUsable: 0
+  holdButtonToUse: 0
+  useOnlyIfGrabbed: 0
+  pointerActivatesUseAction: 0
+  useOverrideButton: 0
+  allowedUseControllers: 0
+  usingState: 0
+--- !u!114 &156865917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 156865911}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dd620fe55e0fff44a79b4459ef50059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &162062294 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4482502740464758, guid: 7a788bdead80f3845acca66488b630cb,
@@ -1838,6 +1911,7 @@ Transform:
   - {fileID: 1589361041}
   - {fileID: 1497315864}
   - {fileID: 1923829900}
+  - {fileID: 2120373781}
   m_Father: {fileID: 1609367091}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6092,14 +6166,14 @@ MonoBehaviour:
   customRaycast: {fileID: 0}
   layersToIgnore:
     serializedVersion: 2
-    m_Bits: 4
+    m_Bits: 393476
   pointerOriginSmoothingSettings:
-    smoothsPosition: 0
+    smoothsPosition: 1
     maxAllowedPerFrameDistanceDifference: 0.003
     smoothsRotation: 0
     maxAllowedPerFrameAngleDifference: 1.5
-  validCollisionColor: {r: 1, g: 1, b: 1, a: 0.553}
-  invalidCollisionColor: {r: 1, g: 0, b: 0, a: 0}
+  validCollisionColor: {r: 1, g: 1, b: 1, a: 1}
+  invalidCollisionColor: {r: 1, g: 1, b: 1, a: 0}
   tracerVisibility: 0
   cursorVisibility: 2
   maximumLength: 100
@@ -6169,14 +6243,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ec704cceb26f6f49b6c900fc83d8d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableTeleport: 1
+  enableTeleport: 0
   targetListPolicy: {fileID: 0}
   pointerRenderer: {fileID: 942716167}
   activationButton: 2
   holdButtonToActivate: 0
   activateOnEnable: 1
   activationDelay: 0
-  selectionButton: 1
+  selectionButton: 0
   selectOnPress: 0
   selectionDelay: 0
   selectAfterHoverDuration: 0
@@ -6316,6 +6390,79 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 961843012}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &963975150 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1673971132225280, guid: 61bd4fd79a20da748be36d82d438a5f1,
+    type: 2}
+  m_PrefabInternal: {fileID: 630211766}
+--- !u!54 &963975152
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 963975150}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &963975153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 963975150}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dd620fe55e0fff44a79b4459ef50059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &963975154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 963975150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3abaf4521bf2344ea21ed3020b98eb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableWhenIdle: 1
+  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
+  allowedTouchControllers: 0
+  ignoredColliders: []
+  isGrabbable: 1
+  holdButtonToGrab: 1
+  stayGrabbedOnTeleport: 1
+  validDrop: 1
+  grabOverrideButton: 0
+  allowedGrabControllers: 0
+  grabAttachMechanicScript: {fileID: 0}
+  secondaryGrabActionScript: {fileID: 0}
+  isUsable: 0
+  holdButtonToUse: 0
+  useOnlyIfGrabbed: 0
+  pointerActivatesUseAction: 0
+  useOverrideButton: 0
+  allowedUseControllers: 0
+  usingState: 0
+--- !u!65 &963975155
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 963975150}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 240, y: 130, z: 10}
+  m_Center: {x: 0, y: -30, z: 0}
 --- !u!1 &966047821
 GameObject:
   m_ObjectHideFlags: 0
@@ -6437,6 +6584,19 @@ Prefab:
     - target: {fileID: 4861431343795690, guid: f1d5885e77af6e9429ed6ff020e87e76, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23389570732662622, guid: f1d5885e77af6e9429ed6ff020e87e76,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861431343795690, guid: f1d5885e77af6e9429ed6ff020e87e76, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1035609706054362, guid: f1d5885e77af6e9429ed6ff020e87e76, type: 2}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1d5885e77af6e9429ed6ff020e87e76, type: 2}
@@ -10064,6 +10224,79 @@ MonoBehaviour:
   useOverrideButton: 0
   allowedUseControllers: 0
   usingState: 0
+--- !u!1 &1486145433 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1713152862717780, guid: 61bd4fd79a20da748be36d82d438a5f1,
+    type: 2}
+  m_PrefabInternal: {fileID: 630211766}
+--- !u!114 &1486145435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1486145433}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dd620fe55e0fff44a79b4459ef50059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1486145436
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1486145433}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 220, y: 123.37, z: 10}
+  m_Center: {x: 22, y: -26, z: 0}
+--- !u!54 &1486145437
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1486145433}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1486145438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1486145433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3abaf4521bf2344ea21ed3020b98eb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableWhenIdle: 1
+  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
+  allowedTouchControllers: 0
+  ignoredColliders: []
+  isGrabbable: 1
+  holdButtonToGrab: 1
+  stayGrabbedOnTeleport: 1
+  validDrop: 1
+  grabOverrideButton: 0
+  allowedGrabControllers: 0
+  grabAttachMechanicScript: {fileID: 0}
+  secondaryGrabActionScript: {fileID: 0}
+  isUsable: 0
+  holdButtonToUse: 0
+  useOnlyIfGrabbed: 0
+  pointerActivatesUseAction: 0
+  useOverrideButton: 0
+  allowedUseControllers: 0
+  usingState: 0
 --- !u!1 &1488287977
 GameObject:
   m_ObjectHideFlags: 0
@@ -13229,14 +13462,14 @@ MonoBehaviour:
   customRaycast: {fileID: 0}
   layersToIgnore:
     serializedVersion: 2
-    m_Bits: 4
+    m_Bits: 393476
   pointerOriginSmoothingSettings:
-    smoothsPosition: 0
+    smoothsPosition: 1
     maxAllowedPerFrameDistanceDifference: 0.003
     smoothsRotation: 0
     maxAllowedPerFrameAngleDifference: 1.5
-  validCollisionColor: {r: 1, g: 1, b: 1, a: 0.553}
-  invalidCollisionColor: {r: 1, g: 0, b: 0, a: 0}
+  validCollisionColor: {r: 1, g: 1, b: 1, a: 1}
+  invalidCollisionColor: {r: 1, g: 1, b: 1, a: 0}
   tracerVisibility: 0
   cursorVisibility: 2
   maximumLength: 100
@@ -13306,14 +13539,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ec704cceb26f6f49b6c900fc83d8d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableTeleport: 1
+  enableTeleport: 0
   targetListPolicy: {fileID: 0}
   pointerRenderer: {fileID: 1886560625}
   activationButton: 2
   holdButtonToActivate: 0
   activateOnEnable: 1
   activationDelay: 0
-  selectionButton: 1
+  selectionButton: 0
   selectOnPress: 0
   selectionDelay: 0
   selectAfterHoverDuration: 0
@@ -14862,6 +15095,79 @@ Transform:
   m_Father: {fileID: 1898540286}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2084755260 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1945361114539184, guid: 61bd4fd79a20da748be36d82d438a5f1,
+    type: 2}
+  m_PrefabInternal: {fileID: 630211766}
+--- !u!114 &2084755262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2084755260}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dd620fe55e0fff44a79b4459ef50059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &2084755263
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2084755260}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 322.44, y: 90, z: 10}
+  m_Center: {x: -52.6, y: 1.46, z: 0}
+--- !u!54 &2084755264
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2084755260}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &2084755265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2084755260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3abaf4521bf2344ea21ed3020b98eb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableWhenIdle: 1
+  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
+  allowedTouchControllers: 0
+  ignoredColliders: []
+  isGrabbable: 1
+  holdButtonToGrab: 1
+  stayGrabbedOnTeleport: 1
+  validDrop: 1
+  grabOverrideButton: 0
+  allowedGrabControllers: 0
+  grabAttachMechanicScript: {fileID: 0}
+  secondaryGrabActionScript: {fileID: 0}
+  isUsable: 0
+  holdButtonToUse: 0
+  useOnlyIfGrabbed: 0
+  pointerActivatesUseAction: 0
+  useOverrideButton: 0
+  allowedUseControllers: 0
+  usingState: 0
 --- !u!1 &2093847721
 GameObject:
   m_ObjectHideFlags: 0
@@ -15183,6 +15489,83 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2faea5b114d30d24888cd183e60ef97f, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &2120373780
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 301291160}
+    m_Modifications:
+    - target: {fileID: 4861431343795690, guid: f1d5885e77af6e9429ed6ff020e87e76, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -182.55356
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861431343795690, guid: f1d5885e77af6e9429ed6ff020e87e76, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -59.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861431343795690, guid: f1d5885e77af6e9429ed6ff020e87e76, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -3.8999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861431343795690, guid: f1d5885e77af6e9429ed6ff020e87e76, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861431343795690, guid: f1d5885e77af6e9429ed6ff020e87e76, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861431343795690, guid: f1d5885e77af6e9429ed6ff020e87e76, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861431343795690, guid: f1d5885e77af6e9429ed6ff020e87e76, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861431343795690, guid: f1d5885e77af6e9429ed6ff020e87e76, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 23389570732662622, guid: f1d5885e77af6e9429ed6ff020e87e76,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861431343795690, guid: f1d5885e77af6e9429ed6ff020e87e76, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1035609706054362, guid: f1d5885e77af6e9429ed6ff020e87e76, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861431343795690, guid: f1d5885e77af6e9429ed6ff020e87e76, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 699.99994
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861431343795690, guid: f1d5885e77af6e9429ed6ff020e87e76, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 9.999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 1035609706054362, guid: f1d5885e77af6e9429ed6ff020e87e76, type: 2}
+      propertyPath: m_Name
+      value: VR Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 65692792002281812, guid: f1d5885e77af6e9429ed6ff020e87e76,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f1d5885e77af6e9429ed6ff020e87e76, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &2120373781 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4861431343795690, guid: f1d5885e77af6e9429ed6ff020e87e76,
+    type: 2}
+  m_PrefabInternal: {fileID: 2120373780}
 --- !u!1 &2132642813
 GameObject:
   m_ObjectHideFlags: 0
