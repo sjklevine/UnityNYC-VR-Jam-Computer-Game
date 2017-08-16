@@ -58,8 +58,8 @@ public class SidescrollerGameManager : MonoBehaviour {
 	void Update() {
 		switch (state) {
 		case GameState.Start:
-			if (Input.anyKeyDown) {	
-				//Start the game!
+			if (Input.anyKeyDown) {
+				// Start the game!
 				ResetLevel();
 			}
 			break;
@@ -153,6 +153,7 @@ public class SidescrollerGameManager : MonoBehaviour {
 
 		// Show the flashy text!
 		gameStartTextObject.gameObject.SetActive(true);
+		gameStartTextObject.BeginToggling ();
 
         // Player and world need to return to their start positions
 		world.transform.position = cachedWorldPosition;

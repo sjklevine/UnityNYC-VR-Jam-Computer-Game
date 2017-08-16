@@ -10,7 +10,9 @@ public class WebcamDisplay : MonoBehaviour {
 		
 		WebCamTexture _webcamTexture = new WebCamTexture();
 		_renderer.material.mainTexture = _webcamTexture;
-		_webcamTexture.Play ();
+		if (_webcamTexture.requestedWidth != 0) {
+			_webcamTexture.Play ();
+		}
 
 		// We can use this to debug camera issues.
 		/*

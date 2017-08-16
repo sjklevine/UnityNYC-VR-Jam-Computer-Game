@@ -1252,5 +1252,11 @@ namespace VRTK
                 }
             }
         }
+
+		// -------------------- HAX - SAM WAS HERE -------------------- //
+
+		public void SetPreviousKinematicState(bool newState) {
+			this.previousKinematicState = newState;
+		}
     }
 }
