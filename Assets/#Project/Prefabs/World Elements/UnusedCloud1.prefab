@@ -4271,7 +4271,7 @@ GameObject:
   - component: {fileID: 4862020839010878}
   - component: {fileID: 136553537673830314}
   m_Layer: 0
-  m_Name: Cloud1
+  m_Name: UnusedCloud1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

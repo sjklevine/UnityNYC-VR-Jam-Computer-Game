@@ -36,7 +36,7 @@ public class PlayerControl : MonoBehaviour
 	{
 
 		// If the jump button is pressed and the player is grounded then the player should jump.
-		if (Input.GetButtonDown ("Jump") && grounded) {
+		if (Input.GetButtonDown ("PCPlayerJump") && grounded) {
 			jump = true;
 		}
 		if (grounded) {
@@ -49,7 +49,7 @@ public class PlayerControl : MonoBehaviour
 	{
 		if (gm.state == SidescrollerGameManager.GameState.Running) {
 			// Cache the horizontal input.
-			float h = Input.GetAxis ("Horizontal");
+			float h = Input.GetAxis ("PCPlayerHorizontal");
 
 			// The Speed animator parameter is set to the absolute value of the horizontal input.
 			anim.SetFloat ("Speed", Mathf.Abs (h));

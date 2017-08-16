@@ -15784,7 +15784,7 @@ MonoBehaviour:
   active: 1
   unhighlightOnDisable: 1
   emissionDarken: 50
-  customMaterial: {fileID: 2100000, guid: ce72f08ef916a0d46b4a03b025c7ccfc, type: 2}
+  customMaterial: {fileID: 2100000, guid: ed4bcfc76bb18d14ebc5996ff908dc08, type: 2}
 --- !u!114 &114696951943238258
 MonoBehaviour:
   m_ObjectHideFlags: 1

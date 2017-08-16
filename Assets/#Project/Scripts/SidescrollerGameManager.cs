@@ -58,7 +58,7 @@ public class SidescrollerGameManager : MonoBehaviour {
 	void Update() {
 		switch (state) {
 		case GameState.Start:
-			if (Input.anyKeyDown) {
+			if (GotInputFromNonVRPlayer()) {
 				// Start the game!
 				ResetLevel();
 			}
@@ -74,7 +74,7 @@ public class SidescrollerGameManager : MonoBehaviour {
 			break;
 		case GameState.Dead:
 			// Waiting for a reset key!
-			if (Input.anyKeyDown) {	
+			if (GotInputFromNonVRPlayer()) {	
 				//Start the game!
 				ResetLevel();
 			}
@@ -170,5 +170,11 @@ public class SidescrollerGameManager : MonoBehaviour {
 	private void UpdateText() {
 		coinsText.text = "x " + coins.ToString ("D2");
 		timeText.text = Mathf.CeilToInt(timeRemaining).ToString ("D3");
+	}
+	private bool GotInputFromNonVRPlayer() {
+		// Just a convenient abstraction.
+		bool gotJump = Input.GetButtonDown ("PCPlayerJump");
+		bool gotMovement = (Input.GetAxis ("PCPlayerHorizontal") != 0f);
+		return (gotJump || gotMovement);
 	}
 }
