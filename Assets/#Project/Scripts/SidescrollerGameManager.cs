@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class SidescrollerGameManager : MonoBehaviour {
 	public static SidescrollerGameManager instance;
-	public enum GameState {Start, Running, Dead, Win};
+	public enum GameState {Start, Running, Dead1, Dead2, Win, PostWin};
 	public bool startWithStartScreen;
 
     // Handy references
@@ -27,6 +28,7 @@ public class SidescrollerGameManager : MonoBehaviour {
 	private int coins = 0;
     private float timeRemaining = 0f;
 	private float startTime = 300f;
+	private float preDead2Time = 1.0f;
 
 	// Other privates
 	private Vector3 cachedWorldPosition;
@@ -72,11 +74,24 @@ public class SidescrollerGameManager : MonoBehaviour {
 			// UPDATE GUI ERRY FRAME
 			UpdateText ();
 			break;
-		case GameState.Dead:
+		case GameState.Dead1:
+			// Lower the time...
+			timeRemaining -= Time.deltaTime;
+			if (timeRemaining <= 0) {
+				state = GameState.Dead2;
+			}
+			break;
+		case GameState.Dead2:
 			// Waiting for a reset key!
 			if (GotInputFromNonVRPlayer()) {	
 				//Start the game!
 				ResetLevel();
+			}
+			break;
+		case GameState.PostWin:
+			// Any player input RELOADS THE SCENE!
+			if (GotInputFromNonVRPlayer()) {	
+				SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
 			}
 			break;
 		}
@@ -92,7 +107,9 @@ public class SidescrollerGameManager : MonoBehaviour {
 		soundtrack.Stop();
 
 		// Change state to avoid the timer code
-		state = GameState.Dead;
+		// Do "predead" instead of "dead" to stop player from resetting too quickly.
+		timeRemaining = preDead2Time;
+		state = GameState.Dead1;
 
 		// Throw up the black screen!
 		blackScreen.SetActive (true);
@@ -127,8 +144,8 @@ public class SidescrollerGameManager : MonoBehaviour {
 		// Clean up
 		youWinTextObject.StopAndHide();
 
-		// Change state to start
-		state = GameState.Start;
+		// Change state to postwin
+		state = GameState.PostWin;
 
 		// Throw up the black screen!
 		blackScreen.SetActive (true);
@@ -166,7 +183,7 @@ public class SidescrollerGameManager : MonoBehaviour {
 		state = GameState.Running;
     }
 
-    // Privates
+	// -------------- Privates --------------
 	private void UpdateText() {
 		coinsText.text = "x " + coins.ToString ("D2");
 		timeText.text = Mathf.CeilToInt(timeRemaining).ToString ("D3");
