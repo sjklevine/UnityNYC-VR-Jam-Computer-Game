@@ -295,7 +295,7 @@ MonoBehaviour:
   precisionGrab: 0
   rightSnapHandle: {fileID: 0}
   leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
+  throwVelocityWithAttachDistance: 1
   throwMultiplier: 2
   onGrabCollisionDelay: 0
   destroyImmediatelyOnThrow: 1

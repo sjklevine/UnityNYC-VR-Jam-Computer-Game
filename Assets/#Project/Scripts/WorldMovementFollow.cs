@@ -17,8 +17,10 @@ public class WorldMovementFollow : MonoBehaviour
 	}
 
 	void Update() {
+		/*
 		Debug.DrawLine (asyncCamera.position + Vector3.right * xMargin + Vector3.up * 5f, asyncCamera.position + Vector3.right * xMargin + Vector3.down * 5f); 
 		Debug.DrawLine (asyncCamera.position + Vector3.left * xMargin + Vector3.up * 5f, asyncCamera.position + Vector3.left * xMargin + Vector3.down * 5f); 
+		*/
 	}
 
 	bool CheckXMargin()
@@ -31,7 +33,9 @@ public class WorldMovementFollow : MonoBehaviour
 
 	void FixedUpdate ()
 	{
-		TrackPlayer();
+		if (world != null) { // Might be, if disabled
+			TrackPlayer ();
+		}
 	}
 
 	void TrackPlayer ()

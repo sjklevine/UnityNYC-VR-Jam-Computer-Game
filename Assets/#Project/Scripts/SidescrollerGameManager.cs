@@ -20,7 +20,9 @@ public class SidescrollerGameManager : MonoBehaviour {
 	public SimpleTimedToggleVisibilty blackScreenTextObject;
 	public SimpleTimedToggleVisibilty gameStartTextObject;
     public SimpleTimedToggleVisibilty youWinTextObject;
-	public Transform currentLevelHolder;
+	public GameObject currentLevelHolder;
+	public GameObject titleObject;
+	public GameObject creditsObject;
 
     // Classic Mario UI stuff
     public TextMeshProUGUI coinsText;
@@ -50,6 +52,9 @@ public class SidescrollerGameManager : MonoBehaviour {
 		state = GameState.Start;
 		blackScreen.SetActive (true);
 		gameStartTextObject.gameObject.SetActive (false);
+		currentLevelHolder.SetActive (false);
+		titleObject.SetActive (true);
+		creditsObject.SetActive (false);
 
 		// Unless you don't!
 		if (!startWithStartScreen) {
@@ -114,6 +119,9 @@ public class SidescrollerGameManager : MonoBehaviour {
 		// Throw up the black screen!
 		blackScreen.SetActive (true);
 
+		// Hide the world! Or don't... not sure which is best.
+		currentLevelHolder.SetActive (false);
+
 		// Edit the text to show you dead
 		blackScreenTextObject.thingToToggle.GetComponent<TextMeshProUGUI>().text = "Oh no!\n\nPress any key to try again.";
 		blackScreenTextObject.BeginToggling ();
@@ -139,7 +147,7 @@ public class SidescrollerGameManager : MonoBehaviour {
 	}
 
 	private IEnumerator LevelWinPart2() {
-		yield return new WaitForSeconds (5.0f);
+		yield return new WaitForSeconds (6.0f);
 
 		// Clean up
 		youWinTextObject.StopAndHide();
@@ -147,11 +155,14 @@ public class SidescrollerGameManager : MonoBehaviour {
 		// Change state to postwin
 		state = GameState.PostWin;
 
-		// Throw up the black screen!
+		// Throw up the black screen, with proper objects
 		blackScreen.SetActive (true);
+		titleObject.SetActive (false);
+		creditsObject.SetActive (true);
+		currentLevelHolder.SetActive (false);
 
 		// Edit the text to show you won
-		blackScreenTextObject.thingToToggle.GetComponent<TextMeshProUGUI>().text = "Thanks for playing!\n\nPress any key to play again\n\nCoins Collected: " + coins + " / " + cachedCoinCount;
+		blackScreenTextObject.thingToToggle.GetComponent<TextMeshProUGUI>().text = "Thanks for playing!\nCoins Collected: " + coins + " / " + cachedCoinCount + "\n\nPress any key to play again";
 		blackScreenTextObject.BeginToggling ();
 	}
 
@@ -162,7 +173,7 @@ public class SidescrollerGameManager : MonoBehaviour {
 		coins = 0;
 		timeRemaining = startTime;
 
-		//Soundtrack!
+		// Soundtrack!
 		soundtrack.Play();
 
 		// Hide the black screen!
@@ -178,6 +189,9 @@ public class SidescrollerGameManager : MonoBehaviour {
 
 		// Reset player velocity
 		player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+
+		// Make sure game is visible...
+		currentLevelHolder.SetActive (true);
 
 		// Is that really it?
 		state = GameState.Running;
