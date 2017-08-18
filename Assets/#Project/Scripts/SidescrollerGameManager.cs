@@ -152,7 +152,7 @@ public class SidescrollerGameManager : MonoBehaviour {
 	}
 
 	private IEnumerator LevelWinPart2() {
-		yield return new WaitForSeconds (6.0f);
+		yield return new WaitForSeconds (8.0f);
 
 		// Clean up
 		youWinTextObject.StopAndHide();
