@@ -10,7 +10,7 @@ public class WebcamDisplay : MonoBehaviour {
 		
 		WebCamTexture _webcamTexture = new WebCamTexture();
 		_renderer.material.mainTexture = _webcamTexture;
-		if (_webcamTexture.requestedWidth != 0) {
+		if (_webcamTexture.deviceName != "no camera detected") {
 			_webcamTexture.Play ();
 		}
 
