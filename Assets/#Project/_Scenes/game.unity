@@ -11162,7 +11162,7 @@ Prefab:
     - target: {fileID: 20220506304438772, guid: deb3c022d155fc5428b33ef1f1bf3fea,
         type: 2}
       propertyPath: m_TargetDisplay
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 20754817169045384, guid: deb3c022d155fc5428b33ef1f1bf3fea,
         type: 2}
