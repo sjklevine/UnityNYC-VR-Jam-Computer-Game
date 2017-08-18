@@ -126,7 +126,7 @@ public class PlayerControl : MonoBehaviour
 	}
 
 	void OnCollisionStay(Collision col){
-		if (col.collider.gameObject.layer.Equals(LayerMask.NameToLayer("Ground"))) {
+		if (col.collider.gameObject.layer.Equals(LayerMask.NameToLayer("Ground")) || (col.collider.gameObject.layer.Equals(LayerMask.NameToLayer("GroundUnmovable")))) {
 			grounded = true;
 			//bounce if we hit a vertical surface
 			if (Mathf.Abs(col.contacts [0].normal.x) == 1.0) {
@@ -136,7 +136,7 @@ public class PlayerControl : MonoBehaviour
 	}
 
 	void OnCollisionExit(Collision col){
-		if (col.collider.gameObject.layer.Equals(LayerMask.NameToLayer("Ground"))) {
+		if (col.collider.gameObject.layer.Equals(LayerMask.NameToLayer("Ground")) || (col.collider.gameObject.layer.Equals(LayerMask.NameToLayer("GroundUnmovable")))) {
 			grounded = false;
 		}
 	}
