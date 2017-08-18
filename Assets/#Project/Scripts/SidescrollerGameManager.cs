@@ -20,9 +20,12 @@ public class SidescrollerGameManager : MonoBehaviour {
 	public SimpleTimedToggleVisibilty blackScreenTextObject;
 	public SimpleTimedToggleVisibilty gameStartTextObject;
     public SimpleTimedToggleVisibilty youWinTextObject;
-	public GameObject currentLevelHolder;
 	public GameObject titleObject;
 	public GameObject creditsObject;
+
+	// Important gameobjects for toggling
+	public GameObject gameWorldObject;
+	public GameObject gameCanvasesObject;
 
     // Classic Mario UI stuff
     public TextMeshProUGUI coinsText;
@@ -52,7 +55,8 @@ public class SidescrollerGameManager : MonoBehaviour {
 		state = GameState.Start;
 		blackScreen.SetActive (true);
 		gameStartTextObject.gameObject.SetActive (false);
-		currentLevelHolder.SetActive (false);
+		gameWorldObject.SetActive (false);
+		gameCanvasesObject.SetActive (false);
 		titleObject.SetActive (true);
 		creditsObject.SetActive (false);
 
@@ -120,7 +124,8 @@ public class SidescrollerGameManager : MonoBehaviour {
 		blackScreen.SetActive (true);
 
 		// Hide the world! Or don't... not sure which is best.
-		currentLevelHolder.SetActive (false);
+		gameWorldObject.SetActive (false);
+		gameCanvasesObject.SetActive (false);
 
 		// Edit the text to show you dead
 		blackScreenTextObject.thingToToggle.GetComponent<TextMeshProUGUI>().text = "Oh no!\n\nPress any key to try again.";
@@ -159,7 +164,8 @@ public class SidescrollerGameManager : MonoBehaviour {
 		blackScreen.SetActive (true);
 		titleObject.SetActive (false);
 		creditsObject.SetActive (true);
-		currentLevelHolder.SetActive (false);
+		gameWorldObject.SetActive (false);
+		gameCanvasesObject.SetActive (false);
 
 		// Edit the text to show you won
 		blackScreenTextObject.thingToToggle.GetComponent<TextMeshProUGUI>().text = "Thanks for playing!\nCoins Collected: " + coins + " / " + cachedCoinCount + "\n\nPress any key to play again";
@@ -191,7 +197,8 @@ public class SidescrollerGameManager : MonoBehaviour {
 		player.GetComponent<Rigidbody>().velocity = Vector3.zero;
 
 		// Make sure game is visible...
-		currentLevelHolder.SetActive (true);
+		gameWorldObject.SetActive (true);
+		gameCanvasesObject.SetActive (true);
 
 		// Is that really it?
 		state = GameState.Running;
