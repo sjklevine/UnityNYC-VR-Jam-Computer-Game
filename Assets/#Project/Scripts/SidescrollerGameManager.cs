@@ -67,6 +67,11 @@ public class SidescrollerGameManager : MonoBehaviour {
 	}
 
 	void Update() {
+		// For all states, "r" resets the game.
+		if (Input.GetKeyDown (KeyCode.R)) {
+			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
+		}
+
 		switch (state) {
 		case GameState.Start:
 			if (GotInputFromNonVRPlayer()) {
@@ -105,6 +110,7 @@ public class SidescrollerGameManager : MonoBehaviour {
 			break;
 		}
 	}
+
 
 	public void CollectCoin(int newCoinCount) {
         coins = newCoinCount;

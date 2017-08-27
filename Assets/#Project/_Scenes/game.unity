@@ -11162,7 +11162,7 @@ Prefab:
     - target: {fileID: 20220506304438772, guid: deb3c022d155fc5428b33ef1f1bf3fea,
         type: 2}
       propertyPath: m_TargetDisplay
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 20754817169045384, guid: deb3c022d155fc5428b33ef1f1bf3fea,
         type: 2}
@@ -12173,6 +12173,11 @@ Prefab:
         type: 2}
       propertyPath: m_Center.z
       value: 0.0000009701278
+      objectReference: {fileID: 0}
+    - target: {fileID: 54515422920770136, guid: 82a54e4d29e338c4db9865589dd8634f,
+        type: 2}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 82a54e4d29e338c4db9865589dd8634f, type: 2}
@@ -13212,7 +13217,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -125}
-  m_SizeDelta: {x: 1860, y: 1120}
+  m_SizeDelta: {x: 2000, y: 1120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1848490055
 MonoBehaviour:
